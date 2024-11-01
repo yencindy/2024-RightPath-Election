@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>密码验证</title>
+    <title>會員驗證</title>
 </head>
 <body>
-    <h1>请输入密码</h1>
+    <h1>請輸入姓名</h1>
     <input type="text" id="password" placeholder="输入密码" />
     <button onclick="validatePassword()">提交</button>
 
@@ -17,7 +17,7 @@
             const message = await response.text();
             alert(message);
 
-            if (message.includes('验证成功')) {
+            if (message.includes('驗證成功')) {
                 // 在这里可以重定向到 Google 表单链接
                 window.location.href = 'https://forms.gle/apjUNsuB7DrLJKCZ7';
             }
