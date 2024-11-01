@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码验证</title>
+</head>
+<body>
+    <h1>请输入密码</h1>
+    <input type="text" id="password" placeholder="输入密码" />
+    <button onclick="validatePassword()">提交</button>
+
+    <script>
+        async function validatePassword() {
+            const password = document.getElementById('password').value;
+            const response = await fetch(`https://script.google.com/macros/s/AKfycbxmDeQ-fuPtdKxYHExrwUfnGyGcVkdCMyVT31YjVybNcvVn7gJlDfBsoQBP-7Dgjgmg/exec?password=${password}`);
+            const message = await response.text();
+            alert(message);
+
+            if (message.includes('验证成功')) {
+                // 在这里可以重定向到 Google 表单链接
+                window.location.href = 'https://forms.gle/apjUNsuB7DrLJKCZ7';
+            }
+        }
+    </script>
+</body>
+</html>
